@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Office;
+use App\SubOffice;
 
 class SubOfficeController extends Controller
 {
@@ -14,7 +15,9 @@ class SubOfficeController extends Controller
      */
     public function index()
     {
-        //
+        $subOffices = SubOffice::all();
+
+        return view('subOffice.index', compact('subOffices'));
     }
 
     /**
@@ -36,7 +39,9 @@ class SubOfficeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        SubOffice::create($request->all());
+        return redirect()->route('sub-offices.index')
+                ->with('success', 'Office created successfully.');
     }
 
     /**
