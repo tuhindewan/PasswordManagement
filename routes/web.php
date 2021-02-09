@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 // Route for Office
 Route::resource('offices', OfficeController::class);
+Route::resource('sub-offices', SubOfficeController::class);
