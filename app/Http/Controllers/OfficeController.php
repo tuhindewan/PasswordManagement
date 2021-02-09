@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use App\Office;
 
 class OfficeController extends Controller
 {
+
+    public function __construct()
+    {
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,9 @@ class OfficeController extends Controller
      */
     public function index()
     {
-        return TRUE;
+        $offices = Office::all();
+
+        return view('office.index', compact('offices'));
     }
 
     /**
@@ -23,7 +33,7 @@ class OfficeController extends Controller
      */
     public function create()
     {
-        //
+        return view('office.create');
     }
 
     /**
@@ -34,7 +44,10 @@ class OfficeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Office::create($request->all());
+        return redirect()->route('offices.index')
+                ->with('success', 'Office created successfully.');
+
     }
 
     /**
