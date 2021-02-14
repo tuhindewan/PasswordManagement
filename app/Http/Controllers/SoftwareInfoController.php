@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Office;
 use App\SubOffice;
 use Illuminate\Support\Facades\DB;
+use App\SoftwareInfo;
 
 class SoftwareInfoController extends Controller
 {
@@ -39,7 +40,9 @@ class SoftwareInfoController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        SoftwareInfo::create($request->all());
+        return redirect()->route('software-infos.index')
+                ->with('success', 'Office created successfully.');
     }
 
     /**

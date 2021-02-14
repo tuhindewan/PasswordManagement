@@ -103,7 +103,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Sub-Office</h1>
+            <h1>Software Information</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -128,7 +128,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="{{ route('sub-offices.store') }}" method="POST">
+              <form id="quickForm" action="{{ route('software-infos.store') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -148,7 +148,19 @@
                   </div>
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="name" name="name" class="form-control" id="name" placeholder="Enter office name">
+                    <input type="name" name="name" class="form-control" id="name" placeholder="Enter software name">
+                  </div>
+                  <div class="form-group">
+                    <label for="url">URL</label>
+                    <input type="url" name="url" class="form-control" id="url" placeholder="Enter URL">
+                  </div>
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="name" name="username" class="form-control" id="username" placeholder="Enter username">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="name" name="password" class="form-control" id="password" placeholder="Enter password">
                   </div>
                 </div>
                 <!-- /.card-body -->
