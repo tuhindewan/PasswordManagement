@@ -141,7 +141,17 @@
                         <tr>
                             <td>{{ $subOffice->name }}</td>
                             <td>{{ $subOffice->office->name }}</td>
-                            <td></td>
+                            <td>
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                 <span class="sr-only">Toggle Dropdown</span>
+                                 <i class="fas fa-cogs"></i>
+                                </button>
+                                <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item" href="{{ route('subOffice.softwareAdd', $subOffice) }}">Add Software <i class="fas fa-edit"></i></a>
+                                </div>
+                              </div>
+                            </td>
                         </tr>
                        @endforeach 
                   </tbody>
