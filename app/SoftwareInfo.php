@@ -10,6 +10,7 @@ class SoftwareInfo extends Model
         'name',
         'url',
         'username',
-        'password'
+        'password',
+        'sub_office_id'
     ];
 }

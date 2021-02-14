@@ -148,7 +148,7 @@
                                  <i class="fas fa-cogs"></i>
                                 </button>
                                 <div class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" href="{{ route('subOffice.softwareAdd', $subOffice) }}">Add Software <i class="fas fa-edit"></i></a>
+                                    <a class="dropdown-item" href="">Add Software <i class="fas fa-edit"></i></a>
                                 </div>
                               </div>
                             </td>

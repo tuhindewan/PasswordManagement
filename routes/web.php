@@ -20,6 +20,6 @@ Route::get('/', function () {
 // Route for Office
 Route::resource('offices', OfficeController::class);
 Route::resource('sub-offices', SubOfficeController::class);
-Route::get('sub-offices/{subOffice}/software/create', 'SoftwareInfoController@create')
-        ->name('subOffice.softwareAdd');
 Route::resource('software-infos', SoftwareInfoController::class);
+Route::get('software-infos/get-sub-offices/{office}', 'SoftwareInfoController@getSubOffices')
+    ->name('office.getSubOffice');

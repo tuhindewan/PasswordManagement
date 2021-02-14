@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Office;
 use App\SubOffice;
+use Illuminate\Support\Facades\DB;
 
 class SoftwareInfoController extends Controller
 {
@@ -22,9 +24,11 @@ class SoftwareInfoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(SubOffice $subOffice)
+    public function create()
     {
-        return view('softwareInfo.create', compact('subOffice'));
+        $offices = Office::all();
+        $subOffices = SubOffice::all();
+        return view('softwareInfo.create', compact('offices', 'subOffices'));
     }
 
     /**
@@ -35,7 +39,7 @@ class SoftwareInfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request->all();
     }
 
     /**
@@ -81,5 +85,11 @@ class SoftwareInfoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getSubOffices(Office $office)
+    {
+        $subOffices = DB::table('sub_offices')->where('office_id', $office->id)->pluck('name', 'id');
+        return json_encode($subOffices);
     }
 }
