@@ -17,7 +17,9 @@ class SoftwareInfoController extends Controller
      */
     public function index()
     {
-        //
+        $softwareInfos = SoftwareInfo::all();
+
+        return view('softwareInfo.index', compact('softwareInfos'));
     }
 
     /**
