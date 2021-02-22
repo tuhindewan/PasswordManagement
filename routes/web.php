@@ -23,3 +23,7 @@ Route::resource('sub-offices', SubOfficeController::class);
 Route::resource('software-infos', SoftwareInfoController::class);
 Route::get('software-infos/get-sub-offices/{office}', 'SoftwareInfoController@getSubOffices')
     ->name('office.getSubOffice');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
