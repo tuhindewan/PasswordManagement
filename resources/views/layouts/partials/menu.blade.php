@@ -27,7 +27,15 @@
                 Office
               </p>
             </a>
-          </li>   
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('sub-offices.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                Sub Office
+              </p>
+            </a>
+          </li>    
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

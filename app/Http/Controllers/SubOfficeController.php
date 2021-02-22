@@ -61,9 +61,10 @@ class SubOfficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(SubOffice $subOffice)
     {
-        //
+        $offices = Office::all();
+        return view('subOffice.edit', compact('subOffice', 'offices'));
     }
 
     /**

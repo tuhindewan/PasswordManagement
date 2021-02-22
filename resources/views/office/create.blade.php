@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Office New Create')
+@section('title', 'Create New Office')
 
 @section('content')
 <!-- Main content -->
@@ -13,7 +13,7 @@
               <div class="card-header">
                 <div class="row">
                   <div class="col-md-10">
-                    <h3 class="card-title">Office New Office</h3>
+                    <h3 class="card-title">Create New Office</h3>
                   </div>
                   <div class="col-md-2 float-right">
                     <a href="{{ route('offices.index') }}" type="button" class="btn btn-info btn-sm btn-block btn-round">

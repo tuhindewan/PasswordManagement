@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Create New Sub Office')
+@section('title', 'Sub Office Edit')
 
 @section('content')
 <section class="content">
@@ -10,7 +10,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-md-10">
-                <h3 class="card-title">Create New Sub Office</h3>
+                <h3 class="card-title">Sub Office Edit</h3>
               </div>
               <div class="col-md-2 float-right">
                 <a href="{{ route('sub-offices.index') }}" type="button" class="btn btn-info btn-sm btn-block btn-round">
@@ -37,7 +37,12 @@
               </div>
             </div>
             <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check"></i> Update
+                </button>
+                <a class="btn btn-warning mr-1" role="button" href="{{ route('sub-offices.index') }}">
+                    <i class="fa fa-times"></i> Cancel
+                </a>
             </div>
           </form>
         </div>
