@@ -49,6 +49,10 @@
                                 <a class="dropdown-item" href="{{ route('sub-offices.show', $subOffice) }}">
                                   <i class="fas fa-eye"></i> Details
                                 </a>
+                                <form class='delete' method="post" action="{{route('sub-offices.destroy', $subOffice)}}" enctype="multipart/form-data">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" class="dropdown-item"><i class="fas fa-trash"></i> Delete</button>
+                                </form>
                             </div>
                           </div>
                         </td>
@@ -70,3 +74,11 @@
   <!-- /.container-fluid -->
 </section>
 @endsection
+
+@push('page-js')
+<script>
+    $(".delete").on("submit", function(){
+        return confirm("Are you sure?");
+    });
+</script>
+@endpush
