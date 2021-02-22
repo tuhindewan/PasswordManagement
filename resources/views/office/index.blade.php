@@ -42,11 +42,15 @@
                                 </button>
                                 <div class="dropdown-menu" role="menu">
                                     <a class="dropdown-item" href="{{ route('offices.edit', $office) }}">
-                                    <i class="fas fa-edit"></i> Edit
+                                      <i class="fas fa-edit"></i> Edit
                                     </a>
                                     <a class="dropdown-item" href="{{ route('offices.show', $office) }}">
-                                    <i class="fas fa-eye"></i> Details
+                                      <i class="fas fa-eye"></i> Details
                                     </a>
+                                    <form class='delete' method="post" action="{{route('offices.destroy', $office)}}" enctype="multipart/form-data">
+                                        @csrf @method('DELETE')
+                                        <button type="submit" class="dropdown-item"><i class="fas fa-trash"></i> Delete</button>
+                                    </form>
                                 </div>
                               </div>
                           </td>
@@ -69,3 +73,11 @@
   </section>
   <!-- /.content -->
 @endsection
+
+@push('page-js')
+<script>
+    $(".delete").on("submit", function(){
+        return confirm("Are you sure?");
+    });
+</script>
+@endpush

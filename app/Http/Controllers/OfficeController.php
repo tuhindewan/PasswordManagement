@@ -92,8 +92,12 @@ class OfficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Office $office)
     {
-        //
+        $office->delete();
+
+        return redirect()->route('offices.index')
+                ->with('success', 'Office deleted successfully.');
+
     }
 }
