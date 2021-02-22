@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Office New Create')
+@section('title', 'Office Edit')
 
 @section('content')
 <!-- Main content -->
@@ -13,7 +13,7 @@
               <div class="card-header">
               <div class="row">
                 <div class="col-md-10">
-                  <h3 class="card-title">Office New Office</h3>
+                  <h3 class="card-title">Office Edit</h3>
                 </div>
                 <div class="col-md-2 float-right">
                   <a href="{{ route('offices.index') }}" type="button" class="btn btn-info btn-block btn-round">
@@ -34,12 +34,12 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">
-                      <i class="fa fa-check"></i> Save
-                  </button>
-                  <a class="btn btn-warning mr-1" role="button" href="{{ route('offices.index') }}">
-                      <i class="fa fa-times"></i> Cancel
-                  </a>
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fa fa-check"></i> Update
+                    </button>
+                    <a class="btn btn-warning mr-1" role="button" href="{{ route('offices.index') }}">
+                        <i class="fa fa-times"></i> Cancel
+                    </a>
                 </div>
               </form>
             </div>

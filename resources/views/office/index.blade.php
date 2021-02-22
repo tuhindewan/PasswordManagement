@@ -10,7 +10,16 @@
           <!-- /.card -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Office List</h3>
+              <div class="row">
+                <div class="col-md-10">
+                  <h3 class="card-title">Office List</h3>
+                </div>
+                <div class="col-md-2 float-right">
+                  <a href="{{ route('offices.create') }}" type="button" class="btn btn-info btn-block btn-round">
+                    <i class="fa fa-plus"></i> New Office
+                  </a>
+                </div>
+              </div> 
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -25,7 +34,19 @@
                     @foreach($offices as $office)
                       <tr>
                           <td>{{ $office->name }}</td>
-                          <td></td>
+                          <td>
+                          <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                 <span class="sr-only">Toggle Dropdown</span>
+                                 <i class="fas fa-cogs"></i>
+                                </button>
+                                <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item" href="{{ route('offices.edit', $office) }}">
+                                    <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                </div>
+                              </div>
+                          </td>
                       </tr>
                     @endforeach 
                 </tbody>
