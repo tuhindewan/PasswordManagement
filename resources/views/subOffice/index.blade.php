@@ -46,6 +46,9 @@
                                 <a class="dropdown-item" href="{{ route('sub-offices.edit', $subOffice) }}">
                                   <i class="fas fa-edit"></i> Edit
                                 </a>
+                                <a class="dropdown-item" href="{{ route('sub-offices.show', $subOffice) }}">
+                                  <i class="fas fa-eye"></i> Details
+                                </a>
                             </div>
                           </div>
                         </td>
