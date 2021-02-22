@@ -74,9 +74,12 @@ class SubOfficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SubOffice $subOffice)
     {
-        //
+        $subOffice->update($request->all());
+        
+        return redirect()->route('sub-offices.index')
+                ->with('success', 'Sub office updated successfully.');
     }
 
     /**

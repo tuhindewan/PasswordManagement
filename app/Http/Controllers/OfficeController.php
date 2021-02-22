@@ -82,6 +82,7 @@ class OfficeController extends Controller
     public function update(Request $request, Office $office)
     {
         $office->update($request->all());
+        
         return redirect()->route('offices.index')
                 ->with('success', 'Office updated successfully.');
     }

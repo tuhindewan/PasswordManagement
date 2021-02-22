@@ -19,8 +19,9 @@
               </div>
             </div>
           </div>
-          <form id="quickForm" action="{{ route('sub-offices.store') }}" method="POST">
+          <form id="quickForm" action="{{ route('sub-offices.update', $subOffice) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="card-body">
               <div class="form-group">
                 <label for="name">Name</label>
