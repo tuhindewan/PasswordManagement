@@ -24,14 +24,14 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="name">Name</label>
-                  <input type="name" name="name" class="form-control" id="name" placeholder="Enter office name">
+                  <input type="name" name="name" value="{{ $subOffice->name }}" class="form-control" id="name" placeholder="Enter office name">
               </div>
               <div class="form-group">
                 <label for="name">Office</label>
                   <select class="selectpicker required form-control"  data-live-search="true" name="office_id">
                     <option style="display: none"></option>
                     @foreach($offices as $office)
-                    <option value={{$office->id}}>{{$office->name}}</option>
+                    <option value="{{$office->id}}" {{ $office->id == $subOffice->office_id ? 'selected' : ''}}>{{$office->name}}</option>
                     @endforeach
                   </select>
               </div>
