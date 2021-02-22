@@ -15,7 +15,7 @@
                   <h3 class="card-title">Office List</h3>
                 </div>
                 <div class="col-md-2 float-right">
-                  <a href="{{ route('offices.create') }}" type="button" class="btn btn-info btn-block btn-round">
+                  <a href="{{ route('offices.create') }}" type="button" class="btn btn-info btn-sm btn-block btn-round">
                     <i class="fa fa-plus"></i> New Office
                   </a>
                 </div>
@@ -43,6 +43,9 @@
                                 <div class="dropdown-menu" role="menu">
                                     <a class="dropdown-item" href="{{ route('offices.edit', $office) }}">
                                     <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('offices.show', $office) }}">
+                                    <i class="fas fa-eye"></i> Details
                                     </a>
                                 </div>
                               </div>

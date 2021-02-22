@@ -16,7 +16,7 @@
                   <h3 class="card-title">Office Edit</h3>
                 </div>
                 <div class="col-md-2 float-right">
-                  <a href="{{ route('offices.index') }}" type="button" class="btn btn-info btn-block btn-round">
+                  <a href="{{ route('offices.index') }}" type="button" class="btn btn-info btn-sm btn-block btn-round">
                     <i class="fa fa-list"></i> List
                   </a>
                 </div>
