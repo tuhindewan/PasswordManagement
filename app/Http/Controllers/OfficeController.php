@@ -79,9 +79,11 @@ class OfficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Office $office)
     {
-        //
+        $office->update($request->all());
+        return redirect()->route('offices.index')
+                ->with('success', 'Office updated successfully.');
     }
 
     /**

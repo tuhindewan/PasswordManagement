@@ -24,8 +24,9 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="{{ route('offices.store') }}" method="POST">
+              <form id="quickForm" action="{{ route('offices.update', [$office]) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
                     <label for="name">Name</label>
