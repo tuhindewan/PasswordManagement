@@ -13,7 +13,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return "so far so good";
+        return view('employee.index');
     }
 
     /**
