@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Office;
+use App\SubOffice;
+use App\SoftwareInfo;
 
 class EmployeeController extends Controller
 {
@@ -23,7 +26,10 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        $offices = Office::all();
+        $subOffices = SubOffice::all();
+        $softwareInfos = SOftwareInfo::all();
+        return view('employee.create', compact('offices', 'subOffices', 'softwareInfos'));
     }
 
     /**

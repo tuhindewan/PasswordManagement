@@ -15,7 +15,7 @@
                     <h3 class="card-title">Employee List</h3>
                   </div>
                   <div class="col-md-2 float-right">
-                    <a href="" type="button" class="btn btn-info btn-sm btn-block btn-round">
+                    <a href="{{ route('employees.create') }}" type="button" class="btn btn-info btn-sm btn-block btn-round">
                       <i class="fa fa-plus"></i> New Employee
                     </a>
                   </div>
