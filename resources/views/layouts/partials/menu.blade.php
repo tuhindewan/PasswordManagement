@@ -43,6 +43,14 @@
                 Software Information
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('employees.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-user-cog"></i>
+              <p>
+                Employee
+              </p>
+            </a>
           </li>    
         </ul>
       </nav>

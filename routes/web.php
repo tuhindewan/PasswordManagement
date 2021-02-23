@@ -17,16 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route for Office
+// Route for office
 Route::resource('offices', OfficeController::class);
+
+// Route for sub office
 Route::resource('sub-offices', SubOfficeController::class);
+
+// Route for software 
 Route::resource('software-infos', SoftwareInfoController::class);
+
 Route::get('software-infos/get-sub-offices/{office}', 
     'SoftwareInfoController@getSubOffices')
     ->name('office.getSubOffice');
 
 Route::get('software-infos/{softwareInfo}/get-sub-offices/{office}', 
             'SoftwareInfoController@getSubOfficesForSoftware');
+
+// Route for employee
+Route::resource('employees', EmployeeController::class);
 
 Auth::routes();
 
