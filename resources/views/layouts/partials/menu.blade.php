@@ -22,7 +22,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('offices.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
+              <i class="nav-icon fas fa-city"></i>
               <p>
                 Office
               </p>
@@ -30,9 +30,17 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('sub-offices.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
+              <i class="nav-icon fas fa-landmark"></i>
               <p>
                 Sub Office
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('software-infos.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-laptop"></i>
+              <p>
+                Software Information
               </p>
             </a>
           </li>    
