@@ -27,35 +27,35 @@
                   <tbody>
                     <tr>
                       <td style="font-weight: bold">Employee ID</td>
-                      <td></td>
+                      <td>{{ $employee->emp_id }}</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold">Name</td>
-                      <td></td>
+                      <td>{{ $employee->name }}</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold">Designation</td>
-                      <td></td>
+                      <td>{{ $employee->designation }}</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold">Sub Office</td>
-                      <td></td>
+                      <td>{{ $employee->software->subOffice->name }}</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold">Office</td>
-                      <td></td>
+                      <td>{{ $employee->software->subOffice->office->name }}</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold">Phone</td>
-                      <td></td>
+                      <td>{{ $employee->phone }}</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold">Email</td>
-                      <td></td>
+                      <td>{{ $employee->email }}</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold">Mobile</td>
-                      <td></td>
+                      <td>{{ $employee->mobile }}</td>
                     </tr>
                   </tbody>
                   <tfoot>
