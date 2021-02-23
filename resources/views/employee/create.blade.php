@@ -140,7 +140,7 @@ jQuery(document).ready(function ()
             if(office_id)
             {
               jQuery.ajax({
-                  url : 'get-sub-offices/' +office_id,
+                  url : 'get-sub-office/' +office_id,
                   type : "GET",
                   dataType : "json",
                   success:function(data)
@@ -157,6 +157,36 @@ jQuery(document).ready(function ()
             else
             {
               $('select[name="sub_office_id"]').empty();
+            }
+        });
+    });
+
+    jQuery(document).ready(function ()
+    {
+        jQuery('select[name="sub_office_id"]').on('change',function(){
+            var sub_office_id = jQuery(this).val();
+            console.log(sub_office_id)
+            if(sub_office_id)
+            {
+              jQuery.ajax({
+                  url : 'get-software-information/' +sub_office_id,
+                  type : "GET",
+                  dataType : "json",
+                  success:function(data)
+                  {
+                      console.log(data);
+                    jQuery('select[name="software_id"]').empty();
+                    jQuery.each(data, function(key,value){
+                        $('select[name="software_id"]').append('<option value="'+ key +'">'+ value +'</option>');
+                    });
+                    $('select[name="software_id"]').selectpicker('refresh');
+                  }
+                  
+              });
+            }
+            else
+            {
+              $('select[name="software_id"]').empty();
             }
         });
     });

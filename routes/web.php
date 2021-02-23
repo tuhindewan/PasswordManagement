@@ -36,6 +36,9 @@ Route::get('software-infos/{softwareInfo}/get-sub-offices/{office}',
 // Route for employee
 Route::resource('employees', EmployeeController::class);
 
+Route::get('employees/get-sub-office/{office}', 'SoftwareInfoController@getSubOffices');
+Route::get('employees/get-software-information/{subOffice}', 'SoftwareInfoController@getSoftwareList');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
