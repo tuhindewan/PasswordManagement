@@ -48,6 +48,9 @@
                                   <a class="dropdown-item" href="{{ route('software-infos.edit', $softwareInfo) }}">
                                     <i class="fas fa-edit"></i> Edit
                                   </a>
+                                  <a class="dropdown-item" href="{{ route('software-infos.show', $softwareInfo) }}">
+                                    <i class="fas fa-eye"></i> Details
+                                  </a>
                                 </div>
                               </div>
                             </td>

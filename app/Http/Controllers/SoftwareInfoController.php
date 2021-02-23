@@ -53,9 +53,9 @@ class SoftwareInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(SoftwareInfo $softwareInfo)
     {
-        //
+        return view('softwareInfo.view', compact('softwareInfo'));
     }
 
     /**
