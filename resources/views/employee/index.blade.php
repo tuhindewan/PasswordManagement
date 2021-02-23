@@ -32,6 +32,7 @@
                     <th>Software</th>
                     <th>Sub-Office</th>
                     <th>Office</th>
+                    <th>Mobile</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -39,31 +40,32 @@
                       @foreach($employees as $employee)
                         <tr>
                           <td>{{ $employee->emp_id }}</td>
-                            <td>{{ $employee->name }}</td>
-                            <td>{{ $employee->designation }}</td>
-                            <td>{{ $employee->software->name }}</td>
-                            <td>{{ $employee->software->subOffice->name }}</td>
-                            <td>{{ $employee->software->subOffice->office->name }}</td>
-                            <td>
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                 <span class="sr-only">Toggle Dropdown</span>
-                                 <i class="fas fa-cogs"></i>
-                                </button>
-                                <div class="dropdown-menu" role="menu">
-                                  <a class="dropdown-item" href="">
-                                    <i class="fas fa-edit"></i> Edit
-                                  </a>
-                                  <a class="dropdown-item" href="">
-                                    <i class="fas fa-eye"></i> Details
-                                  </a>
-                                  <form class='delete' method="post" action="">
-                                      @csrf @method('DELETE')
-                                      <button type="submit" class="dropdown-item"><i class="fas fa-trash"></i> Delete</button>
-                                  </form>
-                                </div>
+                          <td>{{ $employee->name }}</td>
+                          <td>{{ $employee->designation }}</td>
+                          <td>{{ $employee->software->name }}</td>
+                          <td>{{ $employee->software->subOffice->name }}</td>
+                          <td>{{ $employee->software->subOffice->office->name }}</td>
+                          <td>{{ $employee->mobile }}</td>
+                          <td>
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                                <i class="fas fa-cogs"></i>
+                              </button>
+                              <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" href="">
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <a class="dropdown-item" href="{{ route('employees.show', $employee) }}">
+                                  <i class="fas fa-eye"></i> Details
+                                </a>
+                                <form class='delete' method="post" action="">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" class="dropdown-item"><i class="fas fa-trash"></i> Delete</button>
+                                </form>
                               </div>
-                            </td>
+                            </div>
+                          </td>
                         </tr>
                       @endforeach 
                   </tbody>
