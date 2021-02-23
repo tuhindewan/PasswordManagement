@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Office;
 use App\SubOffice;
 use App\SoftwareInfo;
+use App\Employee;
 
 class EmployeeController extends Controller
 {
@@ -40,7 +41,9 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Employee::create($request->all());
+        return redirect()->route('employees.index')
+                ->with('success', 'Employee created successfully.');
     }
 
     /**

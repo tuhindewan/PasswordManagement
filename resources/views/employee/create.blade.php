@@ -19,7 +19,7 @@
               </div>
             </div> 
           </div>
-          <form id="quickForm" action="{{ route('software-infos.store') }}" method="POST">
+          <form id="quickForm" action="{{ route('employees.store') }}" method="POST">
             @csrf
             <div class="card-body">
                 <div class="row">
@@ -165,7 +165,6 @@ jQuery(document).ready(function ()
     {
         jQuery('select[name="sub_office_id"]').on('change',function(){
             var sub_office_id = jQuery(this).val();
-            console.log(sub_office_id)
             if(sub_office_id)
             {
               jQuery.ajax({
@@ -174,7 +173,6 @@ jQuery(document).ready(function ()
                   dataType : "json",
                   success:function(data)
                   {
-                      console.log(data);
                     jQuery('select[name="software_id"]').empty();
                     jQuery.each(data, function(key,value){
                         $('select[name="software_id"]').append('<option value="'+ key +'">'+ value +'</option>');
