@@ -27,31 +27,31 @@
                 <select class="selectpicker required form-control"  data-live-search="true" name="office_id">
                   <option style="display: none"></option>
                   @foreach($offices as $office)
-                    <option value="{{$office->id}}">{{$office->name}}</option>
+                    <option value="{{$office->id}}" {{ $office->id == $softwareInfo->subOffice->office->id ? 'selected' : ''}}>{{$office->name}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
                 <label for="name">Sub-office</label>
                 <select class="selectpicker required form-control" id="cat"  data-live-search="true" name="sub_office_id">
-                  <option></option>
+                  <option>{{ $softwareInfo->subOffice->name }}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="name" name="name" class="form-control" id="name" placeholder="Enter software name">
+                <input type="name" name="name" value="{{ $softwareInfo->name }}" class="form-control" id="name" placeholder="Enter software name">
               </div>
               <div class="form-group">
                 <label for="url">URL</label>
-                <input type="url" name="url" class="form-control" id="url" placeholder="Enter URL">
+                <input type="url" name="url" value="{{ $softwareInfo->url }}" class="form-control" id="url" placeholder="Enter URL">
               </div>
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="name" name="username" class="form-control" id="username" placeholder="Enter username">
+                <input type="name" name="username" value="{{ $softwareInfo->username }}" class="form-control" id="username" placeholder="Enter username">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="name" name="password" class="form-control" id="password" placeholder="Enter password">
+                <input type="name" name="password" value="{{ $softwareInfo->password }}" class="form-control" id="password" placeholder="Enter password">
               </div>
             </div>
             <!-- /.card-body -->

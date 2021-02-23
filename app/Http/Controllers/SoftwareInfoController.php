@@ -99,4 +99,10 @@ class SoftwareInfoController extends Controller
         $subOffices = DB::table('sub_offices')->where('office_id', $office->id)->pluck('name', 'id');
         return json_encode($subOffices);
     }
+
+    public function getSubOfficesForSoftware(SoftwareInfo $softwareInfo, Office $office)
+    {
+        $subOffices = DB::table('sub_offices')->where('office_id', $office->id)->pluck('name', 'id');
+        return json_encode($subOffices);
+    }
 }

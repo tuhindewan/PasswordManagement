@@ -21,8 +21,12 @@ Route::get('/', function () {
 Route::resource('offices', OfficeController::class);
 Route::resource('sub-offices', SubOfficeController::class);
 Route::resource('software-infos', SoftwareInfoController::class);
-Route::get('software-infos/get-sub-offices/{office}', 'SoftwareInfoController@getSubOffices')
+Route::get('software-infos/get-sub-offices/{office}', 
+    'SoftwareInfoController@getSubOffices')
     ->name('office.getSubOffice');
+
+Route::get('software-infos/{softwareInfo}/get-sub-offices/{office}', 
+            'SoftwareInfoController@getSubOfficesForSoftware');
 
 Auth::routes();
 
