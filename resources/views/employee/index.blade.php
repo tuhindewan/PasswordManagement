@@ -59,7 +59,7 @@
                                 <a class="dropdown-item" href="{{ route('employees.show', $employee) }}">
                                   <i class="fas fa-eye"></i> Details
                                 </a>
-                                <form class='delete' method="post" action="">
+                                <form class='delete' method="post" action="{{ route('employees.destroy', $employee) }}">
                                     @csrf @method('DELETE')
                                     <button type="submit" class="dropdown-item"><i class="fas fa-trash"></i> Delete</button>
                                 </form>
