@@ -51,6 +51,10 @@
                                   <a class="dropdown-item" href="{{ route('software-infos.show', $softwareInfo) }}">
                                     <i class="fas fa-eye"></i> Details
                                   </a>
+                                  <form class='delete' method="post" action="{{route('software-infos.destroy', $softwareInfo)}}">
+                                      @csrf @method('DELETE')
+                                      <button type="submit" class="dropdown-item"><i class="fas fa-trash"></i> Delete</button>
+                                  </form>
                                 </div>
                               </div>
                             </td>

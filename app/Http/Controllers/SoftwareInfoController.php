@@ -91,9 +91,12 @@ class SoftwareInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SoftwareInfo $softwareInfo)
     {
-        //
+        $softwareInfo->delete();
+
+        return redirect()->route('software-infos.index')
+                ->with('success', 'Software deleted successfully.');
     }
 
     public function getSubOffices(Office $office)
