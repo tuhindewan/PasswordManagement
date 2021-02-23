@@ -17,7 +17,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('employee.index');
+        $employees = Employee::all();
+        return view('employee.index', compact('employees'));
     }
 
     /**
@@ -29,7 +30,7 @@ class EmployeeController extends Controller
     {
         $offices = Office::all();
         $subOffices = SubOffice::all();
-        $softwareInfos = SOftwareInfo::all();
+        $softwareInfos = SoftwareInfo::all();
         return view('employee.create', compact('offices', 'subOffices', 'softwareInfos'));
     }
 

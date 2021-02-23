@@ -26,18 +26,24 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>Employee ID</th>
                     <th>Name</th>
+                    <th>Designation</th>
+                    <th>Software</th>
                     <th>Sub-Office</th>
                     <th>Office</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                      
+                      @foreach($employees as $employee)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                          <td>{{ $employee->emp_id }}</td>
+                            <td>{{ $employee->name }}</td>
+                            <td>{{ $employee->designation }}</td>
+                            <td>{{ $employee->software->name }}</td>
+                            <td>{{ $employee->software->subOffice->name }}</td>
+                            <td>{{ $employee->software->subOffice->office->name }}</td>
                             <td>
                               <div class="btn-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -59,7 +65,7 @@
                               </div>
                             </td>
                         </tr>
-                        
+                      @endforeach 
                   </tbody>
                   <tfoot>
                   </tfoot>
