@@ -26,27 +26,27 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="name" name="name" class="form-control" placeholder="Enter Name">
+                            <input type="name" name="name" value="{{ $employee->name }}" class="form-control" placeholder="Enter Name">
                         </div>
                         <div class="form-group">
                             <label for="designation">Designation</label>
-                            <input type="name" name="designation" class="form-control" placeholder="Enter Designation">
+                            <input type="name" name="designation" value="{{ $employee->designation }}" class="form-control" placeholder="Enter Designation">
                         </div>
                         <div class="form-group">
                             <label for="emp_id">Employee ID</label>
-                            <input type="name" name="emp_id" class="form-control" placeholder="Enter Employee ID">
+                            <input type="name" name="emp_id" value="{{ $employee->emp_id }}" class="form-control" placeholder="Enter Employee ID">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="name" name="phone" class="form-control" placeholder="Enter Phone Number">
+                            <input type="name" name="phone" value="{{ $employee->phone }}" class="form-control" placeholder="Enter Phone Number">
                         </div>
                         <div class="form-group">
                             <label for="mobile">Mobile</label>
-                            <input type="name" name="mobile" class="form-control" placeholder="Enter Mobile Number">
+                            <input type="name" name="mobile" value="{{ $employee->mobile }}" class="form-control" placeholder="Enter Mobile Number">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="name" name="email" class="form-control" placeholder="Enter Email">
+                            <input type="name" name="email" value="{{ $employee->email }}" class="form-control" placeholder="Enter Email">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -54,21 +54,21 @@
                             <label for="name">Office</label>
                             <select class="selectpicker required form-control"  data-live-search="true" name="office_id">
                                 <option style="display: none"></option>
-                            @foreach($offices as $office)
-                                <option value="{{$office->id}}">{{$office->name}}</option>
-                            @endforeach
+                                @foreach($offices as $office)
+                                <option value="{{$office->id}}" {{ $office->id == $employee->software->subOffice->office->id ? 'selected' : ''}}>{{$office->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="name">Sub-office</label>
                             <select class="selectpicker required form-control" id="cat"  data-live-search="true" name="sub_office_id">
-                                <option></option>
+                                <option>{{ $employee->software->subOffice->name }}</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="name">Software</label>
                             <select class="selectpicker required form-control" id="software"  data-live-search="true" name="software_id">
-                                <option></option>
+                                <option>{{ $employee->software->name }}</option>
                             </select>
                         </div>
                     </div>

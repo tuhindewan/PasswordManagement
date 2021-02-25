@@ -98,5 +98,12 @@ class EmployeeController extends Controller
                 ->with('success', 'Employee deleted successfully.');
     }
 
+    public function getSubOfficesForOffice(Employee $employee, Office $office)
+    {
+        return "ok";
+        $subOffices = DB::table('sub_offices')->where('office_id', $office->id)->pluck('name', 'id');
+        return json_encode($subOffices);
+    }
+
     
 }
