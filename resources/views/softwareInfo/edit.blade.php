@@ -35,7 +35,7 @@
               <div class="form-group">
                 <label for="name">Sub-office</label>
                 <select class="selectpicker required form-control" id="cat"  data-live-search="true" name="sub_office_id">
-                  <option>{{ $softwareInfo->subOffice->name }}</option>
+                  <option value="{{ $softwareInfo->subOffice->id }}">{{ $softwareInfo->subOffice->name }}</option>
                 </select>
               </div>
               <div class="form-group">

@@ -79,9 +79,11 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Employee $employee)
     {
-        //
+        $employee->update($request->all());
+        return redirect()->route('employees.index')
+                ->with('success', 'Employee updated successfully.');
     }
 
     /**
@@ -97,13 +99,5 @@ class EmployeeController extends Controller
         return redirect()->route('employees.index')
                 ->with('success', 'Employee deleted successfully.');
     }
-
-    public function getSubOfficesForOffice(Employee $employee, Office $office)
-    {
-        return "ok";
-        $subOffices = DB::table('sub_offices')->where('office_id', $office->id)->pluck('name', 'id');
-        return json_encode($subOffices);
-    }
-
     
 }

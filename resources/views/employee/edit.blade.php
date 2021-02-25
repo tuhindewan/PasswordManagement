@@ -21,6 +21,7 @@
           </div>
           <form id="quickForm" action="{{ route('employees.update', $employee) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -62,13 +63,13 @@
                         <div class="form-group">
                             <label for="name">Sub-office</label>
                             <select class="selectpicker required form-control" id="cat"  data-live-search="true" name="sub_office_id">
-                                <option>{{ $employee->software->subOffice->name }}</option>
+                                <option value="{{ $employee->software->subOffice->id }}">{{ $employee->software->subOffice->name }}</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="name">Software</label>
                             <select class="selectpicker required form-control" id="software"  data-live-search="true" name="software_id">
-                                <option>{{ $employee->software->name }}</option>
+                                <option value="{{ $employee->software->id }}">{{ $employee->software->name }}</option>
                             </select>
                         </div>
                     </div>
