@@ -53,7 +53,7 @@
                                 <i class="fas fa-cogs"></i>
                               </button>
                               <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="{{ route('employees.edit', $employee) }}">
                                   <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <a class="dropdown-item" href="{{ route('employees.show', $employee) }}">
